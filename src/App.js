@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import {BrowserRouter as Router, Route, Switch} from  'react-router-dom';
 import Products from './Components/Products';
 import AddProduct from './Components/AddProduct';
@@ -7,7 +8,24 @@ import Product from './Components/Product';
 import Header from './Components/Header';
 
 
+
+
 function App() {
+
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() =>{
+    const consultarApi = async () =>{
+      // realizamos consulta a api de json-server (fake local port 4.000)
+      const resultado = await axios.get('http://localhost:4000/restaurant');
+
+      console.log(resultado) 
+    }
+
+    consultarApi();
+  },[]);
+
   return (
     <Router>
       <Header/>
