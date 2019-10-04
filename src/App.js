@@ -4,11 +4,14 @@ import Products from './Components/Products';
 import AddProduct from './Components/AddProduct';
 import EditProduct from './Components/EditProduct';
 import Product from './Components/Product';
+import Header from './Components/Header';
 
 
 function App() {
   return (
     <Router>
+      <Header/>
+      <main className = "container mt-5">
       <Switch>
         <Route exact path= "/new-Product" component= {AddProduct} />
         <Route exact path= "/Products" component= {Products} />
@@ -16,6 +19,8 @@ function App() {
         <Route exact path= "/Products/Edit/:id" component= {EditProduct} />
          
       </Switch>
+      <p className = "mt-4 p2 text-center">Todos los derechos reservados</p>
+      </main>
     </Router> 
       
   );
