@@ -20,7 +20,10 @@ function App() {
       // realizamos consulta a api de json-server (fake local port 4.000)
       const resultado = await axios.get('http://localhost:4000/restaurant');
 
-      console.log(resultado) 
+      
+
+      setProducts(resultado.data);
+      
     }
 
     consultarApi();
@@ -32,14 +35,16 @@ function App() {
       <main className = "container mt-5">
       <Switch>
         <Route exact path= "/new-Product" component= {AddProduct} />
-        <Route exact path= "/Products" component= {Products} />
-        <Route exact path= "/Products/:id" component= {Product} />
+        <Route exact path= "/Products" render= { ()=>(<Products products ={products}/>)} />
+        <Route exact path= "/Products/:id" component= {Products} />
         <Route exact path= "/Products/Edit/:id" component= {EditProduct} />
          
       </Switch>
       <p className = "mt-4 p2 text-center">Todos los derechos reservados</p>
       </main>
     </Router> 
+
+    // recordar: para pasar datos a componentes bajo routing es necesario la funcion render, cuando no hay datos simplemetnte un prop dentro del router.
       
   );
 }
