@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Error from './error';
+import axios from 'axios';
 
 
 
@@ -13,8 +14,8 @@ function AddProduct(){
 
 
 
-    // Metodo principal de Submit.
-    const agregarProducto = (e) =>{
+    // Metodo principal de Submit. 
+    const agregarProducto = async e =>{
         e.preventDefault();
 
         if (nombrePlatillo === '' || precioPlatillo === ''  || categoria === ''){
@@ -24,7 +25,18 @@ function AddProduct(){
 
         setError(false);
 
-        // Crear el nuevo producto
+        // Crear el nuevo producto con un try & catch, usamos object ehanced los objetos tienen el mismo nombre.
+        try{
+            const resultado = await axios.post('http://localhost:4000/restaurant',{
+                nombrePlatillo,
+                precioPlatillo,
+                categoria
+            });
+            console.log(resultado);
+        } catch (error){
+            console.log(error);
+
+        }
 
     }
 
