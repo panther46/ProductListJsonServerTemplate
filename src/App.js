@@ -16,12 +16,12 @@ function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() =>{
-    const consultarApi = async () =>{
+    const consultarApi = async () =>{ 
       // realizamos consulta a api de json-server (fake local port 4.000)
       const resultado = await axios.get('http://localhost:4000/restaurant');
 
       
-
+      
       setProducts(resultado.data);
       
     }

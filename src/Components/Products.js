@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import ProductList from './ProductList'
 
 // PRODUCT PAGE
+// Mapeamos el componente de la lista, le asignamos un key y le pasamos el product, variable que obtiene del callback del metodo map.
 function Products({products}){
 
     return(
