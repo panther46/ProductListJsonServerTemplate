@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import Error from './error';
+
+
 
 function AddProduct(){
 
@@ -6,10 +9,29 @@ function AddProduct(){
     const [nombrePlatillo, setNombrePlatillo] = useState('');
     const [precioPlatillo, setPrecioPlatillo] = useState('');
     const [categoria, setCategoria] = useState('');
+    const [error, setError] = useState(false);
+
+
+
+    // Metodo principal de Submit.
+    const agregarProducto = (e) =>{
+        e.preventDefault();
+
+        if (nombrePlatillo === '' || precioPlatillo === ''  || categoria === ''){
+            setError(true);
+            return; // Para hacer stop en ejecución
+        }
+
+        setError(false);
+
+        // Crear el nuevo producto
+
+    }
 
     return(
-        <div className="col-md-8 mx-auto ">
+        <div className="col-md-8 mx-auto " onSubmit = {agregarProducto}>
             <h1 className="text-center">Agregar Nuevo Producto</h1>
+            {(error) ? <Error mensaje="Todos los campos son obligatorios"/>:null}
 
             <form className="mt-5">
                 <div className="form-group">
