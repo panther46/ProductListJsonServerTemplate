@@ -17,6 +17,84 @@
       "precioPlatillo": "456",
       "categoria": "postre",
       "id": 3
+    },
+    {
+      "nombrePlatillo": "torta de queso",
+      "precioPlatillo": "25",
+      "categoria": "postre",
+      "id": 4
+    },
+    {
+      "nombrePlatillo": "Torta de queso",
+      "precioPlatillo": "12",
+      "categoria": "postre",
+      "id": 5
+    },
+    {
+      "nombrePlatillo": "torta de chocolate",
+      "precioPlatillo": "56",
+      "categoria": "postre",
+      "id": 6
+    },
+    {
+      "nombrePlatillo": "torta de pupu",
+      "precioPlatillo": "256",
+      "categoria": "postre",
+      "id": 7
+    },
+    {
+      "nombrePlatillo": "torta de kakita",
+      "precioPlatillo": "1256",
+      "categoria": "postre",
+      "id": 8
+    },
+    {
+      "nombrePlatillo": "Torta de pelos de pene",
+      "precioPlatillo": "500",
+      "categoria": "postre",
+      "id": 9
+    },
+    {
+      "nombrePlatillo": "Pasticho de kaka",
+      "precioPlatillo": "600",
+      "categoria": "cortes",
+      "id": 10
+    },
+    {
+      "nombrePlatillo": "popo rib eye",
+      "precioPlatillo": "200",
+      "categoria": "cortes",
+      "id": 11
+    },
+    {
+      "nombrePlatillo": "kakita de cualo",
+      "precioPlatillo": "126",
+      "categoria": "postre",
+      "id": 12
+    },
+    {
+      "nombrePlatillo": "kakita de cualo con meado",
+      "precioPlatillo": "11",
+      "categoria": "bebida",
+      "id": 13
+    },
+    {
+      "nombrePlatillo": "kakita de popo",
+      "precioPlatillo": "6889",
+      "categoria": "cortes",
+      "id": 14
+    },
+    {
+      "nombrePlatillo": "kakita de mierda",
+      "precioPlatillo": "700",
+      "categoria": "postre",
+      "id": 15
+    },
+    {
+      "nombrePlatillo": "kaka del ano",
+      "precioPlatillo": "700",
+      "categoria": "cortes",
+      "id": 16
     }
   ]
 }

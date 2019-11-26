@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import Error from './error';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+// creaction  de HOC redireccion de usuarios con history, recordar modificar export default y ejecutar [history.push('/Products');]
+import {withRouter} from 'react-router-dom';
 
 
 
-function AddProduct(){
+function AddProduct({history,setProductReloadingState}){
 
     // States locals del form
     const [nombrePlatillo, setNombrePlatillo] = useState('');
@@ -33,10 +36,28 @@ function AddProduct(){
                 categoria
             });
             console.log(resultado);
+            //Condicional para modal con SweetAlert2 si todo es ok (mensaje 201 de status, ejecuta el swal):
+            if(resultado.status === 201){
+                Swal.fire(
+                    'Bien!',
+                    'Producto añadido!',
+                    'success'
+                  )
+            }
         } catch (error){
             console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Algo salio mal, vuelve a intentarlo',
+              })
 
         }
+        // setting del state wrapper a true 
+        setProductReloadingState(true);
+        // pasando el historial al objeto history
+        history.push('/Products');
+        
 
     }
 
@@ -127,5 +148,5 @@ function AddProduct(){
     )
 
     }
-
-export default AddProduct;
+// HOC WithRouter para redireccionar al usuario
+export default withRouter(AddProduct);
