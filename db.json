@@ -1,9 +1,9 @@
 {
   "restaurant": [
     {
-      "precioPlatillo": "200",
+      "precioPlatillo": "22222222212313",
       "nombrePlatillo": "Cheesecake",
-      "categoria": "postres",
+      "categoria": "postre",
       "id": 1
     },
     {

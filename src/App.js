@@ -42,12 +42,14 @@ function App() {
         <Route exact path= "/Products/Edit/:id" render = {props =>{                 
           // Tomar el id del producto y convertirlo a int
           const idProductInt = parseInt(props.match.params.id);
-          // El producto que se pasa al state con metodo fitler
-          const producto = products.filter(producto => products.id === idProductInt);
+          // El producto que se pasa al state con metodo fitler, devuelve un nuevo array
+          const producto = products.filter(producto => producto.id === idProductInt);   // parametros de filter "producto nuevo nombre de variable, itera sobre id de producto nuevo nombre de variable"
 
           return(
             <EditProduct
             producto = {producto[0]}
+            setProductReloadingState = {setProductReloadingState}
+            
             />
           )
         }} />
