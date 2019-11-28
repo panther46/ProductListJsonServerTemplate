@@ -20,6 +20,7 @@ function App() {
   useEffect(() =>{
     const consultarApi = async () =>{ 
       // realizamos consulta a api de json-server (fake local port 4.000)
+      // If integrado para el state wrapper
       if (productReloading){
         const resultado = await axios.get('http://localhost:4000/restaurant');
       setProducts(resultado.data);
@@ -35,10 +36,21 @@ function App() {
       <Header/>
       <main className = "container mt-5">
       <Switch>
-        <Route exact path= "/new-Product" render= {()=>(<AddProduct setProductReloadingState = {setProductReloadingState}/>)} />
-        <Route exact path= "/Products" render= { ()=>(<Products products ={products}/>)} />
+        <Route exact path= "/new-Product" render= {()=>(<AddProduct setProductReloadingState = {setProductReloadingState}/>)} /> // el return en esta funcion es implicito
+        <Route exact path= "/Products" render= { ()=>(<Products products ={products}/>)} /> // el return en esta funcion es implicito
         <Route exact path= "/Products/:id" component= {Products} />
-        <Route exact path= "/Products/Edit/:id" component= {EditProduct} />
+        <Route exact path= "/Products/Edit/:id" render = {props =>{                 
+          // Tomar el id del producto y convertirlo a int
+          const idProductInt = parseInt(props.match.params.id);
+          // El producto que se pasa al state con metodo fitler
+          const producto = products.filter(producto => products.id === idProductInt);
+
+          return(
+            <EditProduct
+            producto = {producto[0]}
+            />
+          )
+        }} />
          
       </Switch>
       <p className = "mt-4 p2 text-center">Todos los derechos reservados</p>
