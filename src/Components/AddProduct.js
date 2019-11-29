@@ -135,6 +135,7 @@ function AddProduct({history,setProductReloadingState}){
                         type="radio" 
                         name="categoria"
                         value="ensalada"
+                        onChange = {e => setCategoria(e.target.value)}
                     />
                     <label className="form-check-label">
                         Ensalada

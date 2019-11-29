@@ -1,13 +1,13 @@
 {
   "restaurant": [
     {
-      "precioPlatillo": "22222222212313",
+      "precioPlatillo": "2",
       "nombrePlatillo": "Cheesecake",
       "categoria": "postre",
       "id": 1
     },
     {
-      "precioPlatillo": "300",
+      "precioPlatillo": "3001",
       "nombrePlatillo": "Rib Eye",
       "categoria": "Cortes",
       "id": 2
@@ -95,6 +95,18 @@
       "precioPlatillo": "700",
       "categoria": "cortes",
       "id": 16
+    },
+    {
+      "nombrePlatillo": "Ensalada cesar",
+      "precioPlatillo": "22",
+      "categoria": "cortes",
+      "id": 17
+    },
+    {
+      "nombrePlatillo": "ensalada cesar con kakita",
+      "precioPlatillo": "500",
+      "categoria": "ensalada",
+      "id": 18
     }
   ]
 }
