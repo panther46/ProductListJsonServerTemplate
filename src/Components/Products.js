@@ -3,7 +3,7 @@ import ProductList from './ProductList'
 
 // PRODUCT PAGE
 // Mapeamos el componente de la lista, le asignamos un key y le pasamos el product, variable que obtiene del callback del metodo map.
-function Products({products}){
+function Products({products, setProductReloadingState}){
 
     return(
         <Fragment>
@@ -13,6 +13,7 @@ function Products({products}){
                     <ProductList
                         key = {product.id}
                         product = {product}
+                        setProductReloadingState = {setProductReloadingState}
                     />
 
                 ))}

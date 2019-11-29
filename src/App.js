@@ -37,7 +37,11 @@ function App() {
       <main className = "container mt-5">
       <Switch>
         <Route exact path= "/new-Product" render= {()=>(<AddProduct setProductReloadingState = {setProductReloadingState}/>)} /> // el return en esta funcion es implicito
-        <Route exact path= "/Products" render= { ()=>(<Products products ={products}/>)} /> // el return en esta funcion es implicito
+        <Route exact path= "/Products" render= { ()=>(
+        <Products 
+        products ={products}/>)}
+        setProductReloadingState = {setProductReloadingState}
+         /> // el return en esta funcion es implicito
         <Route exact path= "/Products/:id" component= {Products} />
         <Route exact path= "/Products/Edit/:id" render = {props =>{                 
           // Tomar el id del producto y convertirlo a int
