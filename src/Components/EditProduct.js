@@ -23,11 +23,23 @@ function EditProduct(props) {
     const editarProducto = async (e) =>{
         e.preventDefault();
 
-        // revisar si hay algun cambio en los campos
+        // VALIDACION (se hizo al final)
+        const nuevoPrecioPlatillo = precioPlatilloRef.current.value,
+              nuevoNombrePlatillo = nombrePlatilloRef.current.value;
+              // categoria no se incluye, radio se gestiona fuera de contexto Ref
 
+        if (nuevoPrecioPlatillo === '' || nuevoNombrePlatillo === '' || categoria === '') {
+            setError(true);
+            return;
+        }
+        // Volvemos a pasar el error a false
+        setError(false);
+
+         
+        // revisar si hay algun cambio en los campos
         let categoriaPlatillo = (categoria === '') ? producto.categoria : categoria;
 
-        // Obteniendo los valores del formulario
+        // Obteniendo los valores del formulario, la const se usara en el try como parametro para editar restapi.
         const editarPlatillo = {
             precioPlatillo: precioPlatilloRef.current.value,
             nombrePlatillo: nombrePlatilloRef.current.value,
